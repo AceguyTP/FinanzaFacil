@@ -44,7 +44,16 @@
         android:layout_gravity="center"
         android:text="Iniciar sesión"
         tools:ignore="VisualLintButtonSize" />
-
+    <Button
+        android:id="@+id/resetPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reestablecer contraseña"
+        android:textColor="@android:color/darker_gray"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        android:padding="0dp"
+        android:layout_gravity="center" />
 
 
 </LinearLayout>

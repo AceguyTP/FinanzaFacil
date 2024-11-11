@@ -88,5 +88,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
         }
+
+        val resetPasswordButton = findViewById<Button>(R.id.resetPasswordButton)
+        resetPasswordButton.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
