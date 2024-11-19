@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             // Usuario autenticado, redirige a la pantalla principal
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, Inicio::class.java))
         } else {
             // Usuario no autenticado, redirige a la pantalla de inicio de sesión
             startActivity(Intent(this, LoginActivity::class.java))

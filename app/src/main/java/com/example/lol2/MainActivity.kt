@@ -12,11 +12,15 @@ import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
+
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         auth = Firebase.auth
 
@@ -30,18 +34,26 @@ class MainActivity : AppCompatActivity() {
 
         welcomeTextView.text = welcomeMessage
 
+
+        val loginButton = findViewById<Button>(R.id.loginButton)
+        loginButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
+        val ingresoButton = findViewById<Button>(R.id.ingresoButton)
+        ingresoButton.setOnClickListener {
+            val intent = Intent(this, Inicio::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         val logoutButton = findViewById<Button>(R.id.logoutButton)
         logoutButton.setOnClickListener {
             auth.signOut()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }
-
-        val loginButton = findViewById<Button>(R.id.loginButton)
-        loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
         }
 
         val registerButton = findViewById<Button>(R.id.registerButton)
@@ -51,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         loginButton.visibility = if (userEmail == null) View.VISIBLE else View.GONE
+        ingresoButton.visibility = if (userEmail == null) View.GONE else View.VISIBLE
         logoutButton.visibility = if (userEmail == null) View.GONE else View.VISIBLE
         registerButton.visibility = if (userEmail == null) View.VISIBLE else View.GONE
     }
