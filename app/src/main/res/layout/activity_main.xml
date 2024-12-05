@@ -9,9 +9,9 @@
         android:id="@+id/logo_imagen"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/logo"
+        android:layout_marginBottom="16dp"
         android:contentDescription="Logo de la aplicación"
-        android:layout_marginBottom="16dp"/>
+        android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/welcomeTextView"

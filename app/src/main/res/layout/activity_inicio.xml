@@ -7,18 +7,11 @@
     android:padding="50dp">
 
     <TextView
-        android:id="@+id/remainingBudgetTextView"
+        android:id="@+id/totalExpensesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Presupuesto Restante: "
-        android:textSize="20sp"/>
+        android:text="Gasto Total: 0.0" />
 
-    <EditText
-        android:id="@+id/currentBudgetEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Presupuesto Actual"
-        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/expenseNameEditText"
@@ -27,16 +20,22 @@
         android:hint="Nombre del Gasto" />
 
     <EditText
-        android:id="@+id/expenseCostEditText"
+        android:id="@+id/expenseAmountEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Costo"
         android:inputType="numberDecimal" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Calcular y Guardar" />
+
 
 </LinearLayout>
