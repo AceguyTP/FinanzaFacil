@@ -6,12 +6,13 @@
     android:gravity="center"
     android:padding="50dp">
 
+
     <TextView
         android:id="@+id/totalExpensesTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gasto Total: 0" />
-
+        android:layout_width="232dp"
+        android:layout_height="37dp"
+        android:text="Gasto Total: 0"
+        android:textSize="21dp" />
 
     <EditText
         android:id="@+id/expenseNameEditText"
@@ -28,13 +29,13 @@
 
     <DatePicker
         android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="301dp"
+        android:layout_height="395dp" />
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="181dp"
+        android:layout_height="60dp"
         android:text="Calcular y Guardar" />
 
 

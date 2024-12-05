@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.semantics.text
+import androidx.work.ExistingPeriodicWorkPolicy
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -20,6 +21,10 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.database
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.Constraints
+import java.util.concurrent.TimeUnit
 
 class Inicio : AppCompatActivity() {
 
@@ -76,7 +81,25 @@ class Inicio : AppCompatActivity() {
                 totalExpensesTextView.text = "Gasto Total: $totalExpenses"
             }
 
-
-            }
         }
+
+        scheduleExpenseReminderWorker()
     }
+
+    private fun scheduleExpenseReminderWorker() {
+        val constraints = Constraints.Builder()
+            // ... (Set constraints)
+            .build()
+
+        val expenseReminderRequest = PeriodicWorkRequestBuilder<ExpenseReminderWorker>(2, TimeUnit.HOURS)
+            .setConstraints(constraints)
+            .build()
+
+        WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(
+            "expenseReminder",
+            ExistingPeriodicWorkPolicy.KEEP,
+            expenseReminderRequest
+        )
+    }
+
+}

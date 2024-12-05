@@ -77,4 +77,6 @@ dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("androidx.work:work-runtime-ktx:2.8.1") // Use the latest version
+    implementation("com.google.firebase:firebase-messaging-ktx")
 }
